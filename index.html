@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário Medias</title>
+  <link rel="stylesheet" href="estilos.css">
+<script>
+function cadastrar(){
+
+let nota1 = parseFloat(document.getElementById("nota1").value)
+let nota2 = parseFloat(document.getElementById("nota2").value)
+let nota3 = parseFloat(document.getElementById("nota3").value)
+
+let media = (nota1 + nota2 + nota3) / 3
+
+let situacao
+
+if(media >= 7){
+  situacao = "Aprovado"
+}else if(media >= 5){
+  situacao = "Em exame"
+}else{
+  situacao = "Reprovado(a)"
+}
+
+//Mensagem 
+document.getElementById("mensagem").innerHTML = situacao+ " com média " +media.toFixed(1)
+
+}
+
+</script>
+</head>
+<body>
+  <form>
+    <img src="icone.png" alt="Ícone página">
+
+    <input type="number" placeholder="Primeira nota" id="nota1">
+    <input type="number" placeholder="Segunda nota" id="nota2">
+    <input type="number" placeholder="Terceira nota" id="nota3">
+    <input type="button" value="Calcular" onclick="cadastrar()">
+
+  </form>
+
+  <h1 id="mensagem"></h1>
+  
+  
+</body>
+</html>
